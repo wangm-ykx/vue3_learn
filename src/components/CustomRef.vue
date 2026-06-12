@@ -6,13 +6,11 @@
 import { customRef } from 'vue'
 
 let msg = customRef(() => {
-    return {
-        get(){},
-        set(){}
-    }
+  return {
+    get() {},
+    set() {},
+  }
 })
 </script>
 
-<style scoped lang="css">
-
-</style>
+<style scoped lang="css"></style>

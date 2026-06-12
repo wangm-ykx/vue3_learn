@@ -6,36 +6,40 @@
 </template>
 
 <script setup lang="ts" name="">
-import { onBeforeMount, onMounted, 
-onBeforeUpdate, onUpdated, 
-onBeforeUnmount, onUnmounted, ref} from 'vue'
+import {
+  onBeforeMount,
+  onMounted,
+  onBeforeUpdate,
+  onUpdated,
+  onBeforeUnmount,
+  onUnmounted,
+  ref,
+} from 'vue'
 let sum = ref(0)
 
-onBeforeMount(()=> {
+onBeforeMount(() => {
   console.log('挂载之前')
 })
 
-onMounted(()=> {
+onMounted(() => {
   console.log('挂载后')
 })
 
-onBeforeUpdate(()=> {
+onBeforeUpdate(() => {
   console.log('更新之前')
 })
 
-onUpdated(()=> {
+onUpdated(() => {
   console.log('更新后')
 })
 
-onBeforeUnmount(()=> {
+onBeforeUnmount(() => {
   console.log('卸载前')
 })
 
-onUnmounted(()=> {
+onUnmounted(() => {
   console.log('卸载后')
 })
 </script>
 
-<style scoped lang="css">
-
-</style>
+<style scoped lang="css"></style>

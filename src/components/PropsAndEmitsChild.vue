@@ -2,9 +2,9 @@
   <div class="child">
     <h2>这是子组件</h2>
     接收的name: {{ props.name }}
-    <br>
+    <br />
     <button @click="props.changeName('lisi')">通过父传的方法修改名字</button>
-    <br>
+    <br />
     <button @click="changeName">通过emit修改名字</button>
   </div>
 </template>
@@ -21,18 +21,16 @@ const emits = defineEmits(['childChangeName'])
 //     name:'默认名字'
 // })
 
-function changeName(){
-    emits('childChangeName','子改名字')
+function changeName() {
+  emits('childChangeName', '子改名字')
 }
-
-
 </script>
 
 <style scoped lang="css">
 .child {
-    border: 1px solid blue;
-    background: skyblue;
-    border-radius: 5px;
-    padding: 20px;
+  border: 1px solid blue;
+  background: skyblue;
+  border-radius: 5px;
+  padding: 20px;
 }
 </style>

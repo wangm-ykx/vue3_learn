@@ -11,9 +11,18 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Content: typeof import('./src/components/Content.vue')['default']
     Count: typeof import('./src/components/Count.vue')['default']
     CustomRef: typeof import('./src/components/CustomRef.vue')['default']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElMenu: typeof import('element-plus/es')['ElMenu']
+    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElMenuItemGroup: typeof import('element-plus/es')['ElMenuItemGroup']
+    ElRadioButton: typeof import('element-plus/es')['ElRadioButton']
+    ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
+    ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     LoveTalk: typeof import('./src/components/LoveTalk.vue')['default']
+    MainContent: typeof import('./src/components/MainContent.vue')['default']
     Modal: typeof import('./src/components/Modal.vue')['default']
     PropsAndEmitsChild: typeof import('./src/components/PropsAndEmitsChild.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

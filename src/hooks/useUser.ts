@@ -3,21 +3,20 @@
 import { ref } from 'vue'
 
 export function useUser() {
-    let userName = ref('zhangsan')
-    let userAge = ref(18)
+  let userName = ref('zhangsan')
+  let userAge = ref(18)
 
-    function setUserName(name: string) {
-        userName.value = name
-    }
+  function setUserName(name: string) {
+    userName.value = name
+  }
 
-    function setUserAge(age: number) {
-        userAge.value = age
-    }
-    return {
-        userName,
-        userAge,
-        setUserName,
-        setUserAge
-    }
-
+  function setUserAge(age: number) {
+    userAge.value = age
+  }
+  return {
+    userName,
+    userAge,
+    setUserName,
+    setUserAge,
+  }
 }

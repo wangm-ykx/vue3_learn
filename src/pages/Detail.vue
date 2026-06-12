@@ -11,12 +11,10 @@
 <script setup lang="ts" name="">
 import { useRoute } from 'vue-router'
 const route = useRoute()
-
 </script>
 
 <style scoped lang="css">
 li {
   list-style: none;
 }
-
 </style>

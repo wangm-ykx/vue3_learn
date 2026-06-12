@@ -1,18 +1,14 @@
 <template>
-  <div>
-
-
-  </div>
+  <div></div>
 </template>
 
 <script setup lang="ts" name="">
-import Modal from '@/components/Modal.vue';
+import Modal from '@/components/Modal.vue'
 import { ref } from 'vue'
 let isShow = ref(false)
 function close() {
   isShow.value = false
 }
-
 </script>
 
 <style scoped lang="css">
@@ -26,8 +22,7 @@ function close() {
 button {
   margin: 0 10px;
 }
-img{
+img {
   width: 200px;
 }
-
 </style>

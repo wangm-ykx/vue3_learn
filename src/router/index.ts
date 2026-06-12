@@ -1,27 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/pages/Home.vue'
-import About from '@/pages/About.vue'
-import News from '@/pages/News.vue'
-import Detail from '@/pages/Detail.vue'
+import Layout from '@/pages/layout/Layout.vue'
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/home',
-      component: Home
+      path: '/',
+      component: Layout,
     },
+    {
+      // 基础
+      path: '/basic',
+      component: Layout,
+      // 基础二级路由
+      children: [
         {
-      path: '/news',
-      component: News,
-      children:[
-      {path: 'detail/:id/:title',
-      component: Detail,}
-      ]
-    },
+          path: 'refAndReactive',
+          component: () => import('@/pages/basic/RefAndReactive.vue'),
+          meta: { title: 'ref和reactive基本使用' },
+        },
         {
-      path: '/about',
-      component: About
+          path: 'toRefAndToRefs',
+          component: () => import('@/pages/basic/ToRefAndToRefs.vue'),
+          meta: { title: 'ToRef和ToRefs' },
+        },
+      ],
     },
     // {
     //   path: '/about',
@@ -31,7 +34,7 @@ const router = createRouter({
     //   // which is lazy-loaded when the route is visited.
     //   component: () => import('../views/AboutView.vue')
     // }
-  ]
+  ],
 })
 
 export default router

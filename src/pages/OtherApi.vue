@@ -2,10 +2,6 @@
   <div>其他api</div>
 </template>
 
-<script setup lang="ts" name="OtherApi">
+<script setup lang="ts" name="OtherApi"></script>
 
-</script>
-
-<style scoped lang="css">
-
-</style>
+<style scoped lang="css"></style>
