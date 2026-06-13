@@ -35,6 +35,21 @@ const router = createRouter({
           component: () => import('@/pages/basic/ComputedAndWatch.vue'),
           meta: { title: 'computed和watch' },
         },
+                    {
+          path: 'vmodelAndMarkref',
+          component: () => import('@/pages/basic/VmodelAndMarkref.vue'),
+          meta: { title: 'vmodel和标签ref' },
+        },
+                            {
+          path: 'propsEmits',
+          component: () => import('@/pages/basic/PropsAndEmits.vue'),
+          meta: { title: 'props和emits' },
+        },
+                                    {
+          path: 'lifeCycle',
+          component: () => import('@/pages/basic/LifeCycle.vue'),
+          meta: { title: '生命周期' },
+        },
       ],
     },
     // {

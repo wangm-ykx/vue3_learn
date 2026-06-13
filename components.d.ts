@@ -13,6 +13,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Content: typeof import('./src/components/Content.vue')['default']
     Count: typeof import('./src/components/Count.vue')['default']
+    CustomInput: typeof import('./src/components/basic/CustomInput.vue')['default']
     CustomRef: typeof import('./src/components/CustomRef.vue')['default']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElMenu: typeof import('element-plus/es')['ElMenu']
@@ -24,7 +25,7 @@ declare module 'vue' {
     LoveTalk: typeof import('./src/components/LoveTalk.vue')['default']
     MainContent: typeof import('./src/components/MainContent.vue')['default']
     Modal: typeof import('./src/components/Modal.vue')['default']
-    PropsAndEmitsChild: typeof import('./src/components/PropsAndEmitsChild.vue')['default']
+    PropsAndEmitsChild: typeof import('./src/components/basic/PropsAndEmitsChild.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

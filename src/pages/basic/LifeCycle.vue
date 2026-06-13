@@ -18,27 +18,27 @@ import {
 let sum = ref(0)
 
 onBeforeMount(() => {
-  console.log('挂载之前')
+  alert('挂载之前')
 })
 
 onMounted(() => {
-  console.log('挂载后')
+  alert('挂载后')
 })
 
 onBeforeUpdate(() => {
-  console.log('更新之前')
+  alert('更新之前')
 })
 
 onUpdated(() => {
-  console.log('更新后')
+  alert('更新后')
 })
 
 onBeforeUnmount(() => {
-  console.log('卸载前')
+  alert('卸载前')
 })
 
 onUnmounted(() => {
-  console.log('卸载后')
+  alert('卸载后')
 })
 </script>
 

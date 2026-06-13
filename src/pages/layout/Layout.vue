@@ -13,7 +13,7 @@
               <span>{{ item.name }}</span>
             </template>
             <el-menu-item v-for="secondItem in item.children" :index="secondItem.to">
-              <div class="menu-item">{{ secondItem.name }}</div>
+              <div class="menu-item" :title="secondItem.name">{{ secondItem.name }}</div>
               </el-menu-item>
             </el-sub-menu>
           
@@ -41,7 +41,9 @@ const menus = reactive([
       {name: 'ToRef和ToRefs', to:'/basic/toRefAndToRefs'},
       {name: 'Options Api和Composition Api', to:'/basic/optionsAndComposition'},
       {name: '计算属性和侦听器', to:'/basic/computedAndWatch'},
-      {name: 'v-model和标签的ref属性', to:'/basic/computedAndWatch'},
+      {name: 'v-model和标签的ref属性', to:'/basic/vmodelAndMarkref'},
+      {name: 'props和emits', to:'/basic/propsEmits'},
+      {name: '生命周期', to:'/basic/lifeCycle'},
     ]
   },
 ])
@@ -66,7 +68,10 @@ const menus = reactive([
       border: 1px solid black;
     }
     .menu-item {
-
+    width: 160px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     }
     .right-content {
       padding: 10px;

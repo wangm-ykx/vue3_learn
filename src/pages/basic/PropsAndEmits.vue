@@ -1,14 +1,15 @@
 <template>
-  <div class="father">
+  <div class="father box">
     <h2>props</h2>
     <h2>这是父组件</h2>
-    <child :name="name" :changeName="changeName" @child-change-name="changeName" />
+    显示名字：{{ name }}
+    <PropsAndEmitsChild :name="name" :changeName="changeName" @child-change-name="changeName" />
   </div>
 </template>
 
 <script setup lang="ts" name="">
 import { ref } from 'vue'
-import Child from '@/components/Child.vue'
+import PropsAndEmitsChild from '@/components/basic/PropsAndEmitsChild.vue';
 let name = ref('zhangsan')
 
 function changeName(value: string) {
