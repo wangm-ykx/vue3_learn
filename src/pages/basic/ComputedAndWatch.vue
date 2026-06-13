@@ -33,11 +33,20 @@
       <h4>对象属性是对象类型</h4>
       levelsObj.books:{{ levelsObj.books }}，
       <button @click="changeBooks">修改books</button>
+
+      <hr>
+      <h3>监听多个数据源</h3>
+      打招呼:{{ hello }} <button @click="hello = 'hi'">修改打招呼语</button>
+      喜欢的水果:{{ likes.fruit[0] }} <button @click="likes.fruit = ['荔枝']">修改喜欢的水果</button>
+      <hr>
+      <h3>watchEffect监听：回调默认会立即执行一次，同时响应式追踪，依赖变化时重新执行该函数</h3>
+      喜欢的季节：{{ likesSeason }} <button @click="likesSeason = '夏天'">修改喜欢的季节</button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts" name="">
+import { he } from 'element-plus/es/locales.mjs'
 import { ref, computed, watch, watchEffect, reactive } from 'vue'
 let firstName = ref('zhang')
 let lastName = ref('san')
@@ -47,7 +56,6 @@ let fullName = computed(() => {
   return firstName.value + lastName.value
 })
 
-console.log(fullName, '===computed')
 
 // watch监听
 // ref定义的基本数据类型
@@ -78,7 +86,6 @@ function changeBookTitle() {
 }
 watch(book, (nV, oV) => {
   alert('监听到book的变化')
-  console.log(nV, '------', oV)
 })
 
 // 监听响应式对象的属性
@@ -106,13 +113,20 @@ watch(
 )
 
 // 多个数据源的监听
-watch([() => levelsObj.books, () => person.value.name], () => {
-  alert('多个数据源的监听')
+const hello = ref('hello')
+const likes = reactive({
+  fruit:['蓝莓']
 })
+
+watch([hello, () => likes.fruit], () => {
+  alert('多个数据源变化监听')
+})
+
 // watchEffect
+const likesSeason = ref('冬天')
 watchEffect(() => {
-  if (lastName.value == '八') {
-    // alert('被我监听到了吧')
+  if(likesSeason.value === '夏天') {
+    alert('未写数据源，只写逻辑的监听')
   }
 })
 </script>

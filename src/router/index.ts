@@ -7,6 +7,7 @@ const router = createRouter({
     {
       path: '/',
       component: Layout,
+      redirect: '/basic/refAndReactive'
     },
     {
       // 基础
@@ -23,6 +24,16 @@ const router = createRouter({
           path: 'toRefAndToRefs',
           component: () => import('@/pages/basic/ToRefAndToRefs.vue'),
           meta: { title: 'ToRef和ToRefs' },
+        },
+             {
+          path: 'optionsAndComposition',
+          component: () => import('@/pages/basic/OptionsAndComposition.vue'),
+          meta: { title: 'options api和composition api' },
+        },
+                  {
+          path: 'computedAndWatch',
+          component: () => import('@/pages/basic/ComputedAndWatch.vue'),
+          meta: { title: 'computed和watch' },
         },
       ],
     },

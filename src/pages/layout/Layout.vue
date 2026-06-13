@@ -7,23 +7,20 @@
     <div class="content">
       <div class="nav">
         <el-menu class="el-menu-vertical-demo" router>
-          <el-sub-menu index="1">
+          <el-sub-menu v-for="item in menus" :index="item.to">
             <template #title>
               <el-icon><icon-menu /></el-icon>
-
-              <span>基础</span>
+              <span>{{ item.name }}</span>
             </template>
-            <el-menu-item index="/basic/refAndReactive">ref和reactive</el-menu-item>
-            <el-menu-item index="/basic/toRefAndToRefs">ToRef和ToRefs</el-menu-item>
-            <el-sub-menu index="1-4">
-              <template #title>item four</template>
-              <el-menu-item index="1-4-1">item one</el-menu-item>
+            <el-menu-item v-for="secondItem in item.children" :index="secondItem.to">
+              <div class="menu-item">{{ secondItem.name }}</div>
+              </el-menu-item>
             </el-sub-menu>
-          </el-sub-menu>
-          <el-menu-item index="4">
+          
+          <!-- <el-menu-item index="4">
             <el-icon><setting /></el-icon>
             <span>Navigator Four</span>
-          </el-menu-item>
+          </el-menu-item> -->
         </el-menu>
       </div>
       <div class="right-content">
@@ -34,7 +31,20 @@
 </template>
 
 <script setup lang="ts" name="Home">
-import MainContent from '@/components/MainContent.vue'
+import { reactive } from 'vue';
+const menus = reactive([
+  {
+    name: '基础',
+    to: '/basic',
+    children: [
+      {name: 'ref和reactive', to:'/basic/refAndReactive'},
+      {name: 'ToRef和ToRefs', to:'/basic/toRefAndToRefs'},
+      {name: 'Options Api和Composition Api', to:'/basic/optionsAndComposition'},
+      {name: '计算属性和侦听器', to:'/basic/computedAndWatch'},
+      {name: 'v-model和标签的ref属性', to:'/basic/computedAndWatch'},
+    ]
+  },
+])
 </script>
 
 <style scoped lang="less">
@@ -54,6 +64,9 @@ import MainContent from '@/components/MainContent.vue'
       width: 200px;
       border-radius: 5px;
       border: 1px solid black;
+    }
+    .menu-item {
+
     }
     .right-content {
       padding: 10px;
