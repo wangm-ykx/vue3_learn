@@ -24,7 +24,7 @@ declare module 'vue' {
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     LoveTalk: typeof import('./src/components/LoveTalk.vue')['default']
     MainContent: typeof import('./src/components/MainContent.vue')['default']
-    Modal: typeof import('./src/components/Modal.vue')['default']
+    Modal: typeof import('./src/components/other/Modal.vue')['default']
     PropsAndEmitsChild: typeof import('./src/components/basic/PropsAndEmitsChild.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

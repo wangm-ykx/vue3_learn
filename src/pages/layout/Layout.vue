@@ -14,9 +14,9 @@
             </template>
             <el-menu-item v-for="secondItem in item.children" :index="secondItem.to">
               <div class="menu-item" :title="secondItem.name">{{ secondItem.name }}</div>
-              </el-menu-item>
-            </el-sub-menu>
-          
+            </el-menu-item>
+          </el-sub-menu>
+
           <!-- <el-menu-item index="4">
             <el-icon><setting /></el-icon>
             <span>Navigator Four</span>
@@ -31,20 +31,42 @@
 </template>
 
 <script setup lang="ts" name="Home">
-import { reactive } from 'vue';
+import { reactive } from 'vue'
 const menus = reactive([
   {
     name: '基础',
     to: '/basic',
     children: [
-      {name: 'ref和reactive', to:'/basic/refAndReactive'},
-      {name: 'ToRef和ToRefs', to:'/basic/toRefAndToRefs'},
-      {name: 'Options Api和Composition Api', to:'/basic/optionsAndComposition'},
-      {name: '计算属性和侦听器', to:'/basic/computedAndWatch'},
-      {name: 'v-model和标签的ref属性', to:'/basic/vmodelAndMarkref'},
-      {name: 'props和emits', to:'/basic/propsEmits'},
-      {name: '生命周期', to:'/basic/lifeCycle'},
-    ]
+      { name: 'ref和reactive', to: '/basic/refAndReactive' },
+      { name: 'ToRef和ToRefs', to: '/basic/toRefAndToRefs' },
+      { name: 'Options Api和Composition Api', to: '/basic/optionsAndComposition' },
+      { name: '计算属性和侦听器', to: '/basic/computedAndWatch' },
+      { name: '生命周期', to: '/basic/lifeCycle' },
+      { name: '自定义hooks', to: '/basic/hooks' },
+    ],
+  },
+  {
+    name: '深入组件',
+    to: '/depth',
+    children: [
+      { name: 'v-model和标签的ref属性', to: '/depth/vmodelAndMarkref' },
+      { name: 'props和emits', to: '/depth/propsEmits' },
+    ],
+  },
+  {
+    name: 'pinia',
+    to: '/pinia',
+    children: [{ name: 'v-model和标签的ref属性', to: '/depth/vmodelAndMarkref' }],
+  },
+  {
+    name: '其他',
+    to: '/other',
+    children: [
+      { name: 'customRef(自定义响应式)', to: '/other/customRef' },
+      { name: 'toRaw和markRaw', to: '/other/toRawAndmarkRaw' },
+      { name: 'shallow和readonly', to: '/other/shallowAndreadonly' },
+      { name: 'Teleport', to: '/other/teleport' },
+    ],
   },
 ])
 </script>
@@ -65,13 +87,13 @@ const menus = reactive([
     .nav {
       width: 200px;
       border-radius: 5px;
-      border: 1px solid black;
+      border: 2px solid skyblue;
     }
     .menu-item {
-    width: 160px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+      width: 160px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
     }
     .right-content {
       padding: 10px;
@@ -79,7 +101,7 @@ const menus = reactive([
       // background: #ccc;
       margin-left: 10px;
       border-radius: 5px;
-      border: 1px solid black;
+      border: 2px solid skyblue;
     }
   }
 }

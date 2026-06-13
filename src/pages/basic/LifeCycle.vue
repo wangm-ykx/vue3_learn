@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>生命周期钩子</h2>
+    <h4>生命周期钩子</h4>
     求和:{{ sum }}，<button @click="sum += 10">sum+10</button>
   </div>
 </template>

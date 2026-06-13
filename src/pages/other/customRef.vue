@@ -1,9 +1,8 @@
 <template>
   <div>
     <h2>自定义Ref：自定义响应式，关键是track和trigger，在get和set中</h2>
-    msg：{{ msg }}
-    <input v-model="msg" />
-    <b style="color: red">结论：一顿瞎蒙加笔记实现了</b>
+    msg：{{ msg }} <input v-model="msg" /><br />
+    <b style="color: red">输入1.5s后对应的响应式文本才更新显示</b>
   </div>
 </template>
 

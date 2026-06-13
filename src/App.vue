@@ -13,7 +13,7 @@ import { RouterView } from 'vue-router'
   border-radius: 5px;
   margin: 10px auto;
   padding: 5px;
-  h4 {
+  h4, h2 {
     /* color: skyblue; */
     background: #87ceeb;
     padding: 5px;

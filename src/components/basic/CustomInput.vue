@@ -1,6 +1,10 @@
 <template>
   <div>
-    <input type="text" :value="modelValue" @input="emit('update:modelValue', $event.target?.value)">
+    <input
+      type="text"
+      :value="modelValue"
+      @input="emit('update:modelValue', $event.target?.value)"
+    />
   </div>
 </template>
 
@@ -8,9 +12,6 @@
 // import { defineProps, defineEmits } from 'vue'
 defineProps(['modelValue'])
 const emit = defineEmits(['update:modelValue'])
-
 </script>
 
-<style scoped lang="css">
-
-</style>
+<style scoped lang="css"></style>
