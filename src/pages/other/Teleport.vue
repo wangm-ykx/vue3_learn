@@ -5,12 +5,14 @@
       <Modal :is-show="isShow" :close="close" />
     </Teleport>
 
-    <img src="@/assets/xigua1.jpg" alt="" /><br>
-    <button @click="isShow = true">打开弹窗</button><br>
+    <img src="@/assets/xigua1.jpg" alt="" /><br />
+    <button @click="isShow = true">打开弹窗</button><br />
   </div>
-  <b style="color: red;">模态框使用position: fixed 能够相对于浏览器窗口放置有一个条件，那就是不能有任何祖先元素设置了 transform、perspective 或者 filter 样式属性，
-      如果，定位就会有问题，可以使用Teleport将模板传送到指定节点，使用to属性：可以是css选择器或html元素
-    </b>
+  <b style="color: red"
+    >模态框使用position: fixed 能够相对于浏览器窗口放置有一个条件，那就是不能有任何祖先元素设置了
+    transform、perspective 或者 filter 样式属性，
+    如果，定位就会有问题，可以使用Teleport将模板传送到指定节点，使用to属性：可以是css选择器或html元素
+  </b>
 </template>
 
 <script setup lang="ts" name="">

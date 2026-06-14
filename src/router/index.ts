@@ -66,6 +66,19 @@ const router = createRouter({
       ],
     },
     {
+      // pinia
+      path: '/pinia',
+      component: Layout,
+      // 基础二级路由
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/pages/pinia/Index.vue'),
+          meta: { title: 'pinia所有特性' },
+        },
+      ],
+    },
+    {
       // 其他
       path: '/other',
       component: Layout,

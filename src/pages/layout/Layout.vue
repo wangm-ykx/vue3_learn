@@ -56,7 +56,7 @@ const menus = reactive([
   {
     name: 'pinia',
     to: '/pinia',
-    children: [{ name: 'v-model和标签的ref属性', to: '/depth/vmodelAndMarkref' }],
+    children: [{ name: '全部特性：读、写、getters、订阅、组合式写法', to: '/pinia/index' }],
   },
   {
     name: '其他',
