@@ -51,6 +51,7 @@ const menus = reactive([
     children: [
       { name: 'v-model和标签的ref属性', to: '/depth/vmodelAndMarkref' },
       { name: 'props和emits', to: '/depth/propsEmits' },
+      { name: '插槽', to: '/depth/slot' },
     ],
   },
   {

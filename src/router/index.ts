@@ -63,6 +63,11 @@ const router = createRouter({
           component: () => import('@/pages/depth/PropsAndEmits.vue'),
           meta: { title: 'props和emits' },
         },
+        {
+          path: 'slot',
+          component: () => import('@/pages/depth/Slot.vue'),
+          meta: { title: '插槽' },
+        },
       ],
     },
     {
