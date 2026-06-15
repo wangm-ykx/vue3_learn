@@ -10,7 +10,7 @@
           <el-sub-menu v-for="item in menus" :index="item.to">
             <template #title>
               <el-icon><icon-menu /></el-icon>
-              <span>{{ item.name }}</span>
+              <span class="top-menu">{{ item.name }}</span>
             </template>
             <el-menu-item v-for="secondItem in item.children" :index="secondItem.to">
               <div class="menu-item" :title="secondItem.name">{{ secondItem.name }}</div>
@@ -52,6 +52,7 @@ const menus = reactive([
       { name: 'v-model和标签的ref属性', to: '/depth/vmodelAndMarkref' },
       { name: 'props和emits', to: '/depth/propsEmits' },
       { name: '插槽', to: '/depth/slot' },
+      { name: '组件通信', to: '/depth/communication' },
     ],
   },
   {
@@ -95,6 +96,10 @@ const menus = reactive([
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
+    }
+    .top-menu {
+      color: skyblue;
+      font-weight: bold;
     }
     .right-content {
       padding: 10px;

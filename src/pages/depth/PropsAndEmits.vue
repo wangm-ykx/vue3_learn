@@ -13,7 +13,7 @@
 
 <script setup lang="ts" name="">
 import { ref } from 'vue'
-import PropsAndEmitsChild from '@/components/basic/PropsAndEmitsChild.vue'
+import PropsAndEmitsChild from '@/components/depth/PropsAndEmitsChild.vue'
 let name = ref('zhangsan')
 
 function changeName(value: string) {

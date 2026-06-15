@@ -68,6 +68,11 @@ const router = createRouter({
           component: () => import('@/pages/depth/Slot.vue'),
           meta: { title: '插槽' },
         },
+        {
+          path: 'communication',
+          component: () => import('@/pages/depth/Communication.vue'),
+          meta: { title: '组件通信' },
+        },
       ],
     },
     {
