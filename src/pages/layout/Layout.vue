@@ -9,7 +9,6 @@
         <el-menu class="el-menu-vertical-demo" router>
           <el-sub-menu v-for="item in menus" :index="item.to">
             <template #title>
-              <el-icon><icon-menu /></el-icon>
               <span class="top-menu">{{ item.name }}</span>
             </template>
             <el-menu-item v-for="secondItem in item.children" :index="secondItem.to">
@@ -59,6 +58,16 @@ const menus = reactive([
     name: 'pinia',
     to: '/pinia',
     children: [{ name: '全部特性：读、写、getters、订阅、组合式写法', to: '/pinia/index' }],
+  },
+  {
+    name: '路由',
+    to: '/route',
+    children: [
+      {
+        name: '全部特性：to的两种写法、命名路由、嵌套路由、路由参数、props配置、replace属性、编程式路由、重定向',
+        to: '/route/index',
+      },
+    ],
   },
   {
     name: '其他',

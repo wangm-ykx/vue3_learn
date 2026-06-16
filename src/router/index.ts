@@ -1,8 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 import Layout from '@/pages/layout/Layout.vue'
+import type { an } from 'vue-router/dist/router-CWoNjPRp.mjs'
 
 const router = createRouter({
   history: createWebHistory(),
+  // hash模式
+  // history: createWebHashHistory(),
   routes: [
     {
       path: '/',
@@ -51,7 +54,6 @@ const router = createRouter({
       // 深入组件
       path: '/depth',
       component: Layout,
-      // 基础二级路由
       children: [
         {
           path: 'vmodelAndMarkref',
@@ -76,10 +78,52 @@ const router = createRouter({
       ],
     },
     {
+      // 路由
+      path: '/route',
+      component: Layout,
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/pages/route/Index.vue'),
+          meta: { title: '路由所有特性' },
+          children: [
+            {
+              path: 'about',
+              name: 'about',
+              component: () => import('@/pages/route/About.vue'),
+            },
+            {
+              path: 'news',
+              name: 'news',
+              component: () => import('@/pages/route/News.vue'),
+            },
+            {
+              // path: 'news/:id',
+              // content参数非必传
+              path: 'news/:id/:content?',
+              name: 'news',
+              component: () => import('@/pages/route/News.vue'),
+              // 相当于<News :id=id :content=content/>，将路由收到的一个个params参数转为一个个props传给组件，只能和params参数配合使用
+              props: true,
+              // 第二种写法，可以自己决定将什么作为props传给路由组件
+              // props(route:any) {
+              //   console.log(route,'可以拿到当前路由对象')
+              //   return route.query
+              // }
+            },
+            {
+              path: 'home',
+              name: 'home',
+              component: () => import('@/pages/route/Home.vue'),
+            },
+          ],
+        },
+      ],
+    },
+    {
       // pinia
       path: '/pinia',
       component: Layout,
-      // 基础二级路由
       children: [
         {
           path: 'index',
@@ -92,7 +136,6 @@ const router = createRouter({
       // 其他
       path: '/other',
       component: Layout,
-      // 基础二级路由
       children: [
         {
           path: 'customRef',
@@ -116,14 +159,6 @@ const router = createRouter({
         },
       ],
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/AboutView.vue')
-    // }
   ],
 })
 
