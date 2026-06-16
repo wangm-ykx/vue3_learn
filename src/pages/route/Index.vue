@@ -79,6 +79,10 @@
       <h4>编程式路由导航：脱离RouterLink实现路由跳转</h4>
       <button @click="jump">跳转基础页面</button>
     </div>
+
+    <div class="box">
+      <h4>路由重定向：让指定路径重新定位到另一个路径，路由规则中redirect配置</h4>
+    </div>
   </div>
 </template>
 

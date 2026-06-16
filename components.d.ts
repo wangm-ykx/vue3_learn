@@ -16,6 +16,7 @@ declare module 'vue' {
     ChildPropseEmits: typeof import('./src/components/depth/ChildPropseEmits.vue')['default']
     copy: typeof import('./src/components/depth/AttrsChild copy.vue')['default']
     CustomInput: typeof import('./src/components/depth/CustomInput.vue')['default']
+    Dashboard: typeof import('./src/components/other/Dashboard.vue')['default']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']

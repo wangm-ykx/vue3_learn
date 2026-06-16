@@ -10,7 +10,7 @@ const router = createRouter({
     {
       path: '/',
       component: Layout,
-      redirect: '/basic/refAndReactive',
+      redirect: '/basic/refAndReactive', // 让路径/重新定位到另外的路径
     },
     {
       // 基础
@@ -156,6 +156,11 @@ const router = createRouter({
           path: 'teleport',
           component: () => import('@/pages/other/Teleport.vue'),
           meta: { title: 'Teleport' },
+        },
+        {
+          path: 'suspense',
+          component: () => import('@/pages/other/Suspense.vue'),
+          meta: { title: 'Suspense' },
         },
       ],
     },

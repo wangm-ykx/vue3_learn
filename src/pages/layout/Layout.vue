@@ -77,6 +77,7 @@ const menus = reactive([
       { name: 'toRaw和markRaw', to: '/other/toRawAndmarkRaw' },
       { name: 'shallow和readonly', to: '/other/shallowAndreadonly' },
       { name: 'Teleport', to: '/other/teleport' },
+      { name: 'Suspense', to: '/other/suspense' },
     ],
   },
 ])
